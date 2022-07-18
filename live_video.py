@@ -22,7 +22,7 @@ def sketch(image):
 
 
 st.title("Live Video to Sketch")
-left, right = st.columns(2, gap='large')
+left, right = st.columns(2)
 run = left.button("Open Camera")
 run1 = right.button("Close Camera")
 real = left.image([])
