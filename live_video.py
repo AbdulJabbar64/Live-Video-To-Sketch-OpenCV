@@ -39,6 +39,6 @@ while run:
 
     if run1:
         camera.release()
-        camera.destroyAllWindows()
+        cv2.destroyAllWindows()
         st.write("Have you Checked Your Sketch")
         break
