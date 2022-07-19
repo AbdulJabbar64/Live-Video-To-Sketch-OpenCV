@@ -27,7 +27,7 @@ run = left.button("Open Camera")
 run1 = right.button("Close Camera")
 real = left.image([])
 SketckCam = right.image([])
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 left.write("This Real Video")
 right.write("This Sketch Video")
 while run:
