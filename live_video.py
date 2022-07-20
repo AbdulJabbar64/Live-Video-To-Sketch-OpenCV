@@ -21,24 +21,19 @@ def sketch(image):
     return s
 
 
-st.title("Live Video to Sketch")
-left, right = st.columns(2)
-run = left.button("Open Camera")
-run1 = right.button("Close Camera")
-real = left.image([])
-SketckCam = right.image([])
-camera = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-left.write("This Real Video")
-right.write("This Sketch Video")
-while run:
-    _, frame = camera.read()
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    
-    real.image(frame)
-    SketckCam.image(sketch(frame))
-
-    if run1:
-        camera.release()
-        cv2.destroyAllWindows()
-        st.write("Have you Checked Your Sketch")
-        break
+st.title("Live Image to Sketch")
+#Uploading the dog image
+sk_image = st.file_uploader("Choose an image...", type="jpg")
+submit = st.button('Make Sketch')
+#On predict button click
+if submit:
+    if sk_image is not None:
+        # Convert the file to an opencv image.
+        file_bytes = np.asarray(bytearray(sk_image.read()), dtype=np.uint8)
+        opencv_image = cv2.imdecode(file_bytes, 1)
+        left, right = st.columns(2, gap='large')
+        left.write("This Real Video")
+        right.write("This Sketch Video")
+        # Displaying the image
+        left.image(opencv_image, channels="BGR")
+        right.image(sketch(opencv_image))
