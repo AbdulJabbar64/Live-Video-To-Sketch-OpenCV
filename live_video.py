@@ -37,5 +37,5 @@ if submit:
         # Displaying the image
         left.image(opencv_image, channels="BGR")
         right.image(sketch(opencv_image))
-else:
-    st.title("First Upload the Image")
+    else:
+        st.title("First Upload the Image")
