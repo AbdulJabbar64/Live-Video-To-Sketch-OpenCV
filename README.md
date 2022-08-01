@@ -1,5 +1,6 @@
 # Live-Video-To-Sketch-OpenCV
 
+# What is OpenCV
 ### About the Project
 Today we are going to make a Real-time/ live Sketch making script using OpenCV in Python. 
 OpenCV makes it very easy for us to work with 
